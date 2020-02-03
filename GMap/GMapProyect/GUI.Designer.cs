@@ -22,13 +22,16 @@ namespace GMapProyect
 			base.Dispose(disposing);
 		}
 
-		#region Código generado por el Diseñador de Windows Forms
+        private GMap.NET.WindowsForms.GMapControl gmap;
+        private System.Windows.Forms.Button Mostrar;
+        private System.Windows.Forms.ComboBox comboBox1;
+        #region Código generado por el Diseñador de Windows Forms
 
-		/// <summary>
-		/// Método necesario para admitir el Diseñador. No se puede modificar
-		/// el contenido de este método con el editor de código.
-		/// </summary>
-		private void InitializeComponent()
+        /// <summary>
+        /// Método necesario para admitir el Diseñador. No se puede modificar
+        /// el contenido de este método con el editor de código.
+        /// </summary>
+        private void InitializeComponent()
 		{
             this.gmap = new GMap.NET.WindowsForms.GMapControl();
             this.Mostrar = new System.Windows.Forms.Button();
@@ -117,9 +120,7 @@ namespace GMapProyect
 
 		#endregion
 
-		private GMap.NET.WindowsForms.GMapControl gmap;
-        private System.Windows.Forms.Button Mostrar;
-        private System.Windows.Forms.ComboBox comboBox1;
+		
 
        
     }

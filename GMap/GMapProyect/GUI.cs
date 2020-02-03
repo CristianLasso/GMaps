@@ -15,12 +15,13 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace GMapProyect
 {
 	public partial class GUI : Form
 	{
 
-
+		
 		public GUI()
 		{
 			InitializeComponent();
@@ -41,6 +42,21 @@ namespace GMapProyect
 			gmap.MaxZoom = 20;
 			gmap.Zoom = 9;
 			gmap.AutoScroll = true;
+
+			using (StreamReader reader = new StreamReader(".\\Data.csv"))
+			{
+				string line;
+
+				while ((line = reader.ReadLine()) != null)
+				{
+					
+					//Separating columns to array
+					string[] X = line.Split(';');
+
+
+					/* Do something with X */
+				}
+			}
 
 		}
 

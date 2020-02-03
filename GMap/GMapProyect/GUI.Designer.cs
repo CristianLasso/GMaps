@@ -45,7 +45,7 @@ namespace GMapProyect
             this.gmap.GrayScaleMode = false;
             this.gmap.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gmap.LevelsKeepInMemory = 5;
-            this.gmap.Location = new System.Drawing.Point(76, 12);
+            this.gmap.Location = new System.Drawing.Point(181, 12);
             this.gmap.MarkersEnabled = true;
             this.gmap.MaxZoom = 8;
             this.gmap.MinZoom = 2;
@@ -59,7 +59,7 @@ namespace GMapProyect
             this.gmap.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gmap.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gmap.ShowTileGridLines = false;
-            this.gmap.Size = new System.Drawing.Size(272, 247);
+            this.gmap.Size = new System.Drawing.Size(739, 452);
             this.gmap.TabIndex = 0;
             this.gmap.Zoom = 0D;
             this.gmap.Load += new System.EventHandler(this.gmap_Load);
@@ -67,7 +67,7 @@ namespace GMapProyect
             // Mostrar
             // 
             this.Mostrar.BackColor = System.Drawing.SystemColors.Control;
-            this.Mostrar.Location = new System.Drawing.Point(31, 286);
+            this.Mostrar.Location = new System.Drawing.Point(181, 486);
             this.Mostrar.Name = "Mostrar";
             this.Mostrar.Size = new System.Drawing.Size(75, 23);
             this.Mostrar.TabIndex = 1;
@@ -91,7 +91,7 @@ namespace GMapProyect
             "Octubre",
             "Noviembre",
             "Diciembre"});
-            this.comboBox1.Location = new System.Drawing.Point(265, 286);
+            this.comboBox1.Location = new System.Drawing.Point(859, 488);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 2;
@@ -102,7 +102,7 @@ namespace GMapProyect
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(439, 341);
+            this.ClientSize = new System.Drawing.Size(1008, 534);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Mostrar);
             this.Controls.Add(this.gmap);

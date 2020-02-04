@@ -1,6 +1,4 @@
 ﻿using GMap.NET;
-using System.IO;
-using System.Net;
 
 namespace GMapProyect
 {
@@ -24,49 +22,13 @@ namespace GMapProyect
 			base.Dispose(disposing);
 		}
 
-        private GMap.NET.WindowsForms.GMapControl gmap;
-        private System.Windows.Forms.Button Mostrar;
-        private System.Windows.Forms.ComboBox comboBox1;
-        #region Código generado por el Diseñador de Windows Forms
+		#region Código generado por el Diseñador de Windows Forms
 
-        public void ReadInfo() {
-
-            var url = "https://query.data.world/s/6ankomqkxpsxwh4nnxjnw4ffvc7knf";
-            var client = new WebClient();
-            using (var stream = client.OpenRead(url))
-            using (var reader = new StreamReader(stream))
-            {
-
-                string line = reader.ReadLine();
-                int count = 0;
-                while ((count < 1000) && ((line=reader.ReadLine()) != null)) {
-
-                    string[] args = line.Split(',');
-
-
-                    string city = args[15].Replace("\"", "");
-                    string delay = args[32].Replace("\"", "");
-                    string city = args[45].Replace("\"", "");
-                }
-            
-            
-            }
-
-
-        
-        
-        
-        
-        
-        
-        }
-
-
-        /// <summary>
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
-        /// </summary>
-        private void InitializeComponent()
+		/// <summary>
+		/// Método necesario para admitir el Diseñador. No se puede modificar
+		/// el contenido de este método con el editor de código.
+		/// </summary>
+		private void InitializeComponent()
 		{
             this.gmap = new GMap.NET.WindowsForms.GMapControl();
             this.Mostrar = new System.Windows.Forms.Button();
@@ -155,7 +117,9 @@ namespace GMapProyect
 
 		#endregion
 
-		
+		private GMap.NET.WindowsForms.GMapControl gmap;
+        private System.Windows.Forms.Button Mostrar;
+        private System.Windows.Forms.ComboBox comboBox1;
 
        
     }

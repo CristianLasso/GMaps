@@ -4,11 +4,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GMapProyect", "GMapProyect\GMapProyect.csproj", "{F61716D6-8FE7-428A-8535-885524795CE2}"
-	ProjectSection(ProjectDependencies) = postProject
-		{9210FD49-ECAC-420F-A41E-C7F7AEB57243} = {9210FD49-ECAC-420F-A41E-C7F7AEB57243}
-	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "model", "model\model.csproj", "{9210FD49-ECAC-420F-A41E-C7F7AEB57243}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "model", "model\model.csproj", "{203A40A9-D224-4ACC-ACAD-AAC846421B39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,10 +17,10 @@ Global
 		{F61716D6-8FE7-428A-8535-885524795CE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F61716D6-8FE7-428A-8535-885524795CE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F61716D6-8FE7-428A-8535-885524795CE2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9210FD49-ECAC-420F-A41E-C7F7AEB57243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9210FD49-ECAC-420F-A41E-C7F7AEB57243}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9210FD49-ECAC-420F-A41E-C7F7AEB57243}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9210FD49-ECAC-420F-A41E-C7F7AEB57243}.Release|Any CPU.Build.0 = Release|Any CPU
+		{203A40A9-D224-4ACC-ACAD-AAC846421B39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{203A40A9-D224-4ACC-ACAD-AAC846421B39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{203A40A9-D224-4ACC-ACAD-AAC846421B39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{203A40A9-D224-4ACC-ACAD-AAC846421B39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

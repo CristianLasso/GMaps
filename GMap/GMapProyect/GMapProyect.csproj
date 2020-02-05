@@ -51,9 +51,6 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="SpreadsheetLight, Version=3.4.11.0, Culture=neutral, PublicKeyToken=32fbb46dc1730c57, processorArchitecture=MSIL">
-      <HintPath>..\packages\SpreadsheetLight.3.4.11\lib\net40\SpreadsheetLight.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -113,7 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\model\model.csproj">
-      <Project>{9210fd49-ecac-420f-a41e-c7f7aeb57243}</Project>
+      <Project>{203a40a9-d224-4acc-acad-aac846421b39}</Project>
       <Name>model</Name>
     </ProjectReference>
   </ItemGroup>

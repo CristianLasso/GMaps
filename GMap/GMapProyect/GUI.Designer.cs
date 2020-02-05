@@ -1,6 +1,4 @@
 ﻿using GMap.NET;
-using System.IO;
-using System.Net;
 
 namespace GMapProyect
 {
@@ -24,53 +22,15 @@ namespace GMapProyect
 			base.Dispose(disposing);
 		}
 
-        private GMap.NET.WindowsForms.GMapControl gmap;
-        private System.Windows.Forms.Button Mostrar;
-        private System.Windows.Forms.ComboBox comboBox1;
-        #region Código generado por el Diseñador de Windows Forms
+		#region Código generado por el Diseñador de Windows Forms
 
-        public void ReadInfo() {
-
-            var url = "https://query.data.world/s/6ankomqkxpsxwh4nnxjnw4ffvc7knf";
-            var client = new WebClient();
-            using (var stream = client.OpenRead(url))
-            using (var reader = new StreamReader(stream))
-            {
-
-                string line = reader.ReadLine();
-                int count = 0;
-                while ((count < 1000) && ((line=reader.ReadLine()) != null)) {
-
-                    string[] args = line.Split(',');
-
-
-                    string city = args[15].Replace("\"", "");
-                    string delay = args[32].Replace("\"", "");
-                    string city = args[45].Replace("\"", "");
-                }
-            
-            
-            }
-
-
-        
-        
-        
-        
-        
-        
-        }
-
-
-        /// <summary>
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
-        /// </summary>
-        private void InitializeComponent()
+		/// <summary>
+		/// Método necesario para admitir el Diseñador. No se puede modificar
+		/// el contenido de este método con el editor de código.
+		/// </summary>
+		private void InitializeComponent()
 		{
             this.gmap = new GMap.NET.WindowsForms.GMapControl();
-            this.Mostrar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // gmap
@@ -102,47 +62,12 @@ namespace GMapProyect
             this.gmap.Zoom = 0D;
             this.gmap.Load += new System.EventHandler(this.gmap_Load);
             // 
-            // Mostrar
-            // 
-            this.Mostrar.BackColor = System.Drawing.SystemColors.Control;
-            this.Mostrar.Location = new System.Drawing.Point(181, 486);
-            this.Mostrar.Name = "Mostrar";
-            this.Mostrar.Size = new System.Drawing.Size(75, 23);
-            this.Mostrar.TabIndex = 1;
-            this.Mostrar.Text = "Mostrar";
-            this.Mostrar.UseVisualStyleBackColor = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Enero",
-            "Febrero",
-            "Marzo",
-            "Abril",
-            "Mayo",
-            "Junio",
-            "Julio",
-            "Agosto",
-            "Septiembre",
-            "Octubre",
-            "Noviembre",
-            "Diciembre"});
-            this.comboBox1.Location = new System.Drawing.Point(859, 488);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 2;
-            this.comboBox1.Text = "Seleccione el mes";
-            // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1008, 534);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.Mostrar);
             this.Controls.Add(this.gmap);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "GUI";
@@ -155,7 +80,7 @@ namespace GMapProyect
 
 		#endregion
 
-		
+		private GMap.NET.WindowsForms.GMapControl gmap;
 
        
     }

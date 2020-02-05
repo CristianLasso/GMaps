@@ -18,5 +18,6 @@ namespace model
         public String City { get; set; }
         public String AirportID { get; set; }
 
+        
     }
 }

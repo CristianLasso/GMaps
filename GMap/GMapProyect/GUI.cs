@@ -42,7 +42,11 @@ namespace GMapProyect
 			gmap.AutoScroll = true;
 
 			readInfo();
+
 			GMapOverlay markers = new GMapOverlay("markers");
+
+			
+
 			for (int i=0; i<citys.Count(); i++) {
 				if (citys.ElementAt(i).promDelays() > 5) {
 					

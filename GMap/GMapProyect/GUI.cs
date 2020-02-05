@@ -3,16 +3,10 @@ using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GMapProyect
@@ -26,7 +20,8 @@ namespace GMapProyect
 			InitializeComponent();
 		}
 
-		private List<String> citys = new List<String>();
+		private List<String> citysNames = new List<String>();
+		private List<Citys> citys = new List<Citys>();
 
 		private void gmap_Load(object sender, EventArgs e)
 		{
@@ -46,7 +41,7 @@ namespace GMapProyect
 
 			readInfo();
 			for (int i=0; i<citys.Count(); i++) {
-				if (/*La ciudad tiene delay*/) {
+				if (/*La ciudad tiene delay*/true) {
 					//Crear marcador color rojo
 				}
 				else {
@@ -69,7 +64,7 @@ namespace GMapProyect
 					String city = args[15].Replace("\"", "");
 					String delay = args[32].Replace("\"", "");
 
-					if (citys.Contains(city))
+					if (citysNames.Contains(city))						
 					{
 						if (Convert.ToDouble(delay) > 0)
 						{
@@ -77,7 +72,7 @@ namespace GMapProyect
 						}
 					}
 					else {
-						citys.Add(city);
+						citysNames.Add(city);
 						//Asignar delay 
 					}
 					count++;

@@ -6,21 +6,26 @@ using System.Threading.Tasks;
 
 namespace model
 {
-    class Citys
+    public class Citys
     {
         private String name;
-        private List<int> delays;
+        private List<Double> delays;
 
 
         public Citys(String name)
         {
             this.name = name;
-            delays = new List<int>();
+            delays = new List<Double>();
         }
 
-        public int promDelays()
+        public void addDelay(Double delay)
         {
-            int prom = 0;
+            delays.Add(delay);
+        }
+
+        public Double promDelays()
+        {
+            Double prom = 0;
             int num = 0;
             for (int i = 0; i < delays.Count(); i++)
             {

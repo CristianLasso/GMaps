@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Windows.Forms;
+using model;
 
 namespace GMapProyect
 {
@@ -41,7 +42,7 @@ namespace GMapProyect
 
 			readInfo();
 			for (int i=0; i<citys.Count(); i++) {
-				if (/*La ciudad tiene delay*/true) {
+				if (citys.ElementAt(i).promDelays() > 5) {
 					//Crear marcador color rojo
 				}
 				else {
@@ -58,6 +59,7 @@ namespace GMapProyect
 			using (var reader = new StreamReader(stream)) {
 				String line = reader.ReadLine();
 				int count = 0;
+				//Acomodar numero de entradas que lee (puse solo 100).
 				while ((count<100) && (line = reader.ReadLine()) != null) {
 					String[] args = line.Split(',');
 
@@ -68,12 +70,14 @@ namespace GMapProyect
 					{
 						if (Convert.ToDouble(delay) > 0)
 						{
-							//Asignar delay
+							citys.ElementAt(citysNames.IndexOf(city)).addDelay(Convert.ToDouble(delay));
 						}
 					}
 					else {
 						citysNames.Add(city);
-						//Asignar delay 
+						Citys newCity = new Citys(city);
+						citys.Add(newCity);
+						citys.ElementAt(citysNames.IndexOf(city)).addDelay(Convert.ToDouble(delay));
 					}
 					count++;
 				}

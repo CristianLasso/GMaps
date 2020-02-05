@@ -41,6 +41,7 @@ namespace GMapProyect
 			gmap.AutoScroll = true;
 
 			readInfo();
+			
 			for (int i=0; i<citys.Count(); i++) {
 				if (citys.ElementAt(i).promDelays() > 5) {
 					//Crear marcador color rojo
@@ -64,7 +65,7 @@ namespace GMapProyect
 					String[] args = line.Split(',');
 
 					String city = args[15].Replace("\"", "");
-					String delay = args[32].Replace("\"", "");
+					String delay = args[31].Replace("\"", "");
 
 					if (citysNames.Contains(city))						
 					{

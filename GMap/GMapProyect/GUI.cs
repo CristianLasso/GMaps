@@ -25,6 +25,8 @@ namespace GMapProyect
 		private List<String> citysNames = new List<String>();
 		private List<Citys> citys = new List<Citys>();
 
+		public object GoogleMapProviders { get; private set; }
+
 		private void gmap_Load(object sender, EventArgs e)
 		{
 			gmap.MapProvider = GMap.NET.MapProviders.BingMapProvider.Instance;
@@ -34,7 +36,7 @@ namespace GMapProyect
 			gmap.ShowCenter = false;
 			gmap.DragButton = MouseButtons.Left;
 			gmap.CanDragMap = true;
-			gmap.MapProvider = GMapProviders.GoogleMap;
+			gmap.MapProvider = GoogleMapProvider.Instance;
 			gmap.Position = new PointLatLng(40.652941, -75.436502);
 			gmap.MinZoom = 0;
 			gmap.MaxZoom = 24;
@@ -45,32 +47,32 @@ namespace GMapProyect
 
 			GMapOverlay markers = new GMapOverlay("markers");
 
-			
-
 			for (int i=0; i<citys.Count(); i++) {
-				if (citys.ElementAt(i).promDelays() > 5) {
+				if (citys.ElementAt(i).promDelays() > 1500) {
 					
 						GeoCoderStatusCode statusCode;
-						PointLatLng? pointLatLng1 = OpenStreet4UMapProvider.Instance.GetPoint(citys.ElementAt(i).Name, out statusCode);
-						if (pointLatLng1 != null)
-						{
-							GMapMarker marker00 = new GMarkerGoogle(new PointLatLng(pointLatLng1.Value.Lat, pointLatLng1.Value.Lng), GMarkerGoogleType.red_dot); marker00.Tag = citys.ElementAt(i).Name;
-							marker00.ToolTipText = citys.ElementAt(i).Name; marker00.ToolTip.Fill = Brushes.Black; marker00.ToolTip.Foreground = Brushes.White;
-							marker00.ToolTip.Stroke = Pens.Black; marker00.ToolTip.TextPadding = new Size(10, 10); marker00.ToolTipMode = MarkerTooltipMode.OnMouseOver;
-						markers.Markers.Add(marker00);
-						gmap.Overlays.Add(markers);
+					PointLatLng? pointLatLng1 = OpenStreet4UMapProvider.Instance.GetPoint(citysNames.ElementAt(i), out statusCode);
+					
+					if (pointLatLng1 != null)
+					{
+						GMapMarker marker00 = new GMarkerGoogle(new PointLatLng(pointLatLng1.Value.Lat, pointLatLng1.Value.Lng), GMarkerGoogleType.red_dot); marker00.Tag = citysNames.ElementAt(i);
+						marker00.ToolTipText = citysNames.ElementAt(i); marker00.ToolTip.Fill = Brushes.Black; marker00.ToolTip.Foreground = Brushes.White;
+						marker00.ToolTip.Stroke = Pens.Black; marker00.ToolTip.TextPadding = new Size(10, 10); marker00.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+					markers.Markers.Add(marker00);
+					gmap.Overlays.Add(markers);
 
-						}
 					}
+					
+				}
 
 					
 				else {
 					GeoCoderStatusCode statusCode;
-					PointLatLng? pointLatLng1 = OpenStreet4UMapProvider.Instance.GetPoint(citys.ElementAt(i).Name, out statusCode);
+					PointLatLng? pointLatLng1 = OpenStreet4UMapProvider.Instance.GetPoint(citysNames.ElementAt(i), out statusCode);
 					if (pointLatLng1 != null)
 					{
-						GMapMarker marker00 = new GMarkerGoogle(new PointLatLng(pointLatLng1.Value.Lat, pointLatLng1.Value.Lng), GMarkerGoogleType.green_dot); marker00.Tag = citys.ElementAt(i).Name;
-						marker00.ToolTipText = citys.ElementAt(i).Name; marker00.ToolTip.Fill = Brushes.Black; marker00.ToolTip.Foreground = Brushes.White;
+						GMapMarker marker00 = new GMarkerGoogle(new PointLatLng(pointLatLng1.Value.Lat, pointLatLng1.Value.Lng), GMarkerGoogleType.green_dot); marker00.Tag = citysNames.ElementAt(i);
+						marker00.ToolTipText = citysNames.ElementAt(i); marker00.ToolTip.Fill = Brushes.Black; marker00.ToolTip.Foreground = Brushes.White;
 						marker00.ToolTip.Stroke = Pens.Black; marker00.ToolTip.TextPadding = new Size(10, 10); marker00.ToolTipMode = MarkerTooltipMode.OnMouseOver;
 						markers.Markers.Add(marker00);
 						gmap.Overlays.Add(markers);
@@ -89,7 +91,7 @@ namespace GMapProyect
 				String line = reader.ReadLine();
 				int count = 0;
 				//Acomodar numero de entradas que lee (puse solo 100).
-				while ((count<100) && (line = reader.ReadLine()) != null) {
+				while ((count<500) && (line = reader.ReadLine()) != null) {
 					String[] args = line.Split(',');
 
 					String city = args[15].Replace("\"", "");

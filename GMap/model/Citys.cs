@@ -23,6 +23,8 @@ namespace model
             delays.Add(delay);
         }
 
+        public String Name { get; set; }
+
         public Double promDelays()
         {
             Double prom = 0;

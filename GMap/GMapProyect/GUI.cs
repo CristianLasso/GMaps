@@ -9,6 +9,7 @@ using System.Linq;
 using System.Net;
 using System.Windows.Forms;
 using model;
+using System.Drawing;
 
 namespace GMapProyect
 {
@@ -41,12 +42,36 @@ namespace GMapProyect
 			gmap.AutoScroll = true;
 
 			readInfo();
+			GMapOverlay markers = new GMapOverlay("markers");
 			for (int i=0; i<citys.Count(); i++) {
 				if (citys.ElementAt(i).promDelays() > 5) {
-					//Crear marcador color rojo
-				}
+					
+						GeoCoderStatusCode statusCode;
+						PointLatLng? pointLatLng1 = OpenStreet4UMapProvider.Instance.GetPoint(citys.ElementAt(i).Name, out statusCode);
+						if (pointLatLng1 != null)
+						{
+							GMapMarker marker00 = new GMarkerGoogle(new PointLatLng(pointLatLng1.Value.Lat, pointLatLng1.Value.Lng), GMarkerGoogleType.red_dot); marker00.Tag = citys.ElementAt(i).Name;
+							marker00.ToolTipText = citys.ElementAt(i).Name; marker00.ToolTip.Fill = Brushes.Black; marker00.ToolTip.Foreground = Brushes.White;
+							marker00.ToolTip.Stroke = Pens.Black; marker00.ToolTip.TextPadding = new Size(10, 10); marker00.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+						markers.Markers.Add(marker00);
+						gmap.Overlays.Add(markers);
+
+						}
+					}
+
+					
 				else {
-					//Crear marcador color verde
+					GeoCoderStatusCode statusCode;
+					PointLatLng? pointLatLng1 = OpenStreet4UMapProvider.Instance.GetPoint(citys.ElementAt(i).Name, out statusCode);
+					if (pointLatLng1 != null)
+					{
+						GMapMarker marker00 = new GMarkerGoogle(new PointLatLng(pointLatLng1.Value.Lat, pointLatLng1.Value.Lng), GMarkerGoogleType.green_dot); marker00.Tag = citys.ElementAt(i).Name;
+						marker00.ToolTipText = citys.ElementAt(i).Name; marker00.ToolTip.Fill = Brushes.Black; marker00.ToolTip.Foreground = Brushes.White;
+						marker00.ToolTip.Stroke = Pens.Black; marker00.ToolTip.TextPadding = new Size(10, 10); marker00.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+						markers.Markers.Add(marker00);
+						gmap.Overlays.Add(markers);
+
+					}
 				}
 			}
 
@@ -64,7 +89,7 @@ namespace GMapProyect
 					String[] args = line.Split(',');
 
 					String city = args[15].Replace("\"", "");
-					String delay = args[32].Replace("\"", "");
+					String delay = args[31].Replace("\"", "");
 
 					if (citysNames.Contains(city))						
 					{
